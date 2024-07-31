@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux'; // Tambahkan ini
+import { useDispatch } from 'react-redux';
 import { setUser } from '../redux/actions';
 import './Register.css';
 
@@ -9,7 +9,7 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
   const navigate = useNavigate();
-  const dispatch = useDispatch(); // Tambahkan ini
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,7 +21,7 @@ const Register = () => {
 
     const user = { email, password };
     localStorage.setItem('user', JSON.stringify(user));
-    dispatch(setUser(user)); // Set user di Redux store
+    dispatch(setUser(user));
     navigate('/login'); // Redirect to login page
   };
 
